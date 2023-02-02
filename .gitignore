@@ -1,3 +1,8 @@
+# data
+*.zip
+*.db
+*.csv
+
 # Logs
 logs
 *.log
