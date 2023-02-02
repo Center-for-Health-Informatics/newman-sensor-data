@@ -1,0 +1,29 @@
+{
+  "name": "newman-flow-data",
+  "version": "1.0.0",
+  "description": "data wrangling for Flow sensor data",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Center-for-Health-Informatics/newman-flow-data.git"
+  },
+  "author": "Rob Ireton <iretonrt@ucmail.uc.edu>",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/Center-for-Health-Informatics/newman-flow-data/issues"
+  },
+  "homepage": "https://github.com/Center-for-Health-Informatics/newman-flow-data#readme",
+  "dependencies": {
+    "adm-zip": "^0.5.10",
+    "better-sqlite3": "^8.0.1",
+    "express": "^4.18.2",
+    "express-fileupload": "^1.4.0",
+    "express-handlebars": "^6.0.7",
+    "serve-favicon": "^2.5.0"
+  }
+}
