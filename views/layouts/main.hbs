@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{{page_title}}</title>
+  <link rel="icon" href="{{base_url}}/favicon.ico" sizes="any">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="{{base_url}}/site.css">
+  {{#each stylesheets}}
+  <link rel="stylesheet" type="text/css" href="{{../base_url}}/{{this}}">
+  {{/each}}
+  {{#each scripts}}
+  <script type="module" src="{{../base_url}}/{{this}}"></script>
+  {{/each}}
+</head>
+<body>
+  <header>
+    <h1>Project Name</h1>
+  </header>
+
+  <main role="main" id="main-content">
+    {{#if page_title}}
+      <header>
+        <h2 class="title" id="page-title">{{page_title}}</h2>
+      </header>
+    {{/if}}
+
+    {{{body}}}
+  </main>
+</body>
+</html>
