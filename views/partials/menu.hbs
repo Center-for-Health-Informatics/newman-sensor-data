@@ -1,0 +1,7 @@
+<nav{{#if id}} id="{{id}}"{{/if}}>
+  <ul>
+  {{#each entries}}
+    <li{{#if id}} id="{{id}}"{{/if}}{{#if class}} class="{{class}}"{{/if}}{{#if title}} title="{{title}}"{{/if}}>{{#if url}}<a href="{{url}}">{{text}}</a>{{else}}<span>{{text}}</span>{{/if}}</li>
+  {{/each}}
+  </ul>
+</nav>

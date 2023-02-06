@@ -6,6 +6,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "dev": "npx nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,11 +20,15 @@
   },
   "homepage": "https://github.com/Center-for-Health-Informatics/newman-flow-data#readme",
   "dependencies": {
+    "@robireton/chrono": "^2.1.0",
     "adm-zip": "^0.5.10",
     "better-sqlite3": "^8.0.1",
     "express": "^4.18.2",
     "express-fileupload": "^1.4.0",
     "express-handlebars": "^6.0.7",
     "serve-favicon": "^2.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
   }
 }

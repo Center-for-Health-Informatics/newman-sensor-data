@@ -15,13 +15,13 @@
 </head>
 <body>
   <header>
-    <h1>Project Name</h1>
+  {{> menu entries=sitemenu}}
   </header>
 
   <main role="main" id="main-content">
     {{#if page_title}}
       <header>
-        <h2 class="title" id="page-title">{{page_title}}</h2>
+        <h1 class="title" id="page-title">{{page_title}}</h1>
       </header>
     {{/if}}
 

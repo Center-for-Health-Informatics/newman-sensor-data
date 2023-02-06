@@ -1,0 +1,128 @@
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  src: local("Atkinson Hyperlegible"), url("Atkinson-Hyperlegible-Regular-102a.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  src: local("Atkinson Hyperlegible Italic"), url("Atkinson-Hyperlegible-Italic-102a.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  src: local("Atkinson Hyperlegible Bold"), url("Atkinson-Hyperlegible-Bold-102a.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  src: local("Atkinson Hyperlegible Bold Italic"), url("Atkinson-Hyperlegible-BoldItalic-102a.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+  font-stretch: normal;
+}
+
+body {
+  font-family: "Atkinson Hyperlegible", sans-serif;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: normal;
+  font-style: normal;
+  text-rendering: optimizeLegibility;
+  font-variant-numeric: proportional-nums;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 1rem;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+}
+
+a {
+  text-decoration: none;
+}
+
+body > header > nav > ul > li {
+  line-height: 1.1;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+main h1 {
+  font-size: 29px;
+  font-weight: bold;
+}
+
+main h2 {
+  font-size: 1.25rem;
+  line-height: 1.22;
+  font-weight: normal;
+  font-style: italic;
+}
+
+main h3 {
+  font-size: 19px;
+  line-height: 1.25;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-style: normal;
+}
+
+main p {
+  text-indent: 0;
+  text-align: left;
+  margin: 1rem auto;
+  max-width: 12rem;
+}
+
+main table caption {
+  font-weight: bold;
+  font-style: normal;
+}
+
+main table tbody th {
+  font-weight: 600;
+}
+
+main aside.site-message {
+  font-weight: bold;
+}
+
+@media (min-width: 62rem) {
+  main h1 {
+    font-size: 29px;
+    font-weight: bold;
+  }
+  
+  main h2 {
+    font-size: 32px;
+    line-height: 1.2;
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  main h3 {
+    font-size: 19px;
+    line-height: 1.25;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-style: normal;
+  }
+
+  main p {
+    margin: 1rem 0;
+    max-width: none;
+  }
+}
