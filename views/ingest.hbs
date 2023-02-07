@@ -1,6 +1,7 @@
 <form enctype="application/x-www-form-urlencoded" action="{{action}}" method="post" id="ingest-form" autocomplete="off">
-<fieldset id="file-drop" class="documents" data-endpoint="{{endpoint}}">
+<fieldset id="file-drop">
 <legend>Flow Data</legend>
-<input type="file" value="Upload" id="file_upload" name="file_upload" accept=".zip,application/zip">
+<p>Drag one or more files to this <i>drop zone</i>.</p>
+<input type="file" value="Upload" id="measurements" name="measurements" accept=".zip,application/zip" multiple>
 </fieldset>
 </form>

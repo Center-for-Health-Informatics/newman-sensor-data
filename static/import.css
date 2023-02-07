@@ -1,0 +1,13 @@
+#file-drop {
+  padding: 2rem;
+  text-align: center;
+  background-color: var(--palegrey);
+}
+
+#file-drop.active {
+  background-color: var(--palered);
+}
+
+#file-drop.dropped {
+  background-color: var(--darkgrey);
+}
