@@ -1,6 +1,5 @@
 #file-drop {
-  padding: 2rem;
-  text-align: center;
+  padding: 4rem 0.5rem;
   background-color: var(--palegrey);
 }
 
@@ -10,4 +9,55 @@
 
 #file-drop.dropped {
   background-color: var(--darkgrey);
+}
+
+form .input {
+  padding: 0.5rem;
+}
+#ingest-progress {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+}
+
+#ingest-progress .progress {
+  display: flex;
+  flex-direction: row;
+  column-gap: 1rem;
+  margin-top: 2rem;
+}
+
+#ingest-progress .complete {
+  color: var(--lightgrey);
+}
+
+#ingest-progress label {
+  padding-left: 0.5rem;
+}
+
+#ingest-progress .filename {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: smaller;
+  background-color: var(--palegrey);
+  padding: 0.125em 0.5em;
+  border-radius: 0.5em;
+  font-variant-numeric: oldstyle-nums proportional-nums
+}
+
+#ingest-progress progress {
+  flex-grow: 1;
+}
+
+#ingest-progress .percent {
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+#ingest-progress .percent::before {
+  content: '(';
+  padding: 0 0.25rem;
+}
+
+#ingest-progress .percent::after {
+  content: ')';
+  padding: 0 0.5rem 0 0.25rem;
 }

@@ -1,12 +1,33 @@
 const dropTarget = document.getElementById('file-drop')
 
+async function progress (url) {
+  const response = await window.fetch(url)
+  if (response.ok) {
+    const result = await response.json()
+    const template = document.createElement('template')
+    template.innerHTML = result.html
+    const parent = document.getElementById('ingest-progress')
+    const child = document.getElementById(`d${result.id}`)
+    if (child) {
+      parent.replaceChild(template.content, child)
+    } else {
+      parent.appendChild(template.content)
+    }
+    if (result.complete) {
+      document.getElementById(`d${result.id}`).classList.add('complete')
+    } else {
+      setTimeout(progress, 500, url)
+    }
+  } else {
+    window.alert('fail')
+  }
+}
+
 dropTarget.addEventListener('drop', async event => {
   event.preventDefault()
-  console.log('Drop')
   event.target.classList.remove('active')
   event.target.classList.add('dropped')
   try {
-    Array.from(event.dataTransfer.items).forEach(item => console.log(item.type))
     const items = Array.from(event.dataTransfer.items).filter(i => i.kind === 'file' && i.type === 'application/zip')
     if (items.length === 0) throw Error('no Flow data exports')
     const input = document.getElementById('measurements')
@@ -15,7 +36,7 @@ dropTarget.addEventListener('drop', async event => {
       const file = item.getAsFile()
       formData.append(`${input.name}_${file.name}`.replace(/\W/g, ''), file)
     }
-    const result = await window.fetch(input.formAction, {
+    const response = await window.fetch(input.formAction, {
       method: 'POST',
       mode: 'same-origin',
       cache: 'no-cache',
@@ -24,10 +45,10 @@ dropTarget.addEventListener('drop', async event => {
       referrerPolicy: 'no-referrer',
       body: formData
     })
-    if (result.ok) {
-      console.log(await result.text())
+    if (response.ok) {
+      (await response.json()).forEach(url => setTimeout(progress, 0, url))
     } else {
-      throw Error(`${result.status} ${result.statusText}`)
+      throw Error(`${response.status} ${response.statusText}`)
     }
   } catch (err) {
     window.alert(err.message)
