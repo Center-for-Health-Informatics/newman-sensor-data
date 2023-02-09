@@ -2,6 +2,7 @@
 *.zip
 *.db
 *.csv
+*.kml
 
 # Logs
 logs

@@ -1,10 +1,10 @@
-// import ingest from './lib/ingest.js'
-import Server from './lib/server.js'
+import ingest from './lib/ingest.js'
+// import Server from './lib/server.js'
 
-const server = new Server({
-  host: '::1',
-  port: 3569
-})
-server.on('listening', (address, port) => console.log(`listening on ${address}:${port}`))
+// const server = new Server({
+//   host: '::1',
+//   port: 3569
+// })
+// server.on('listening', (address, port) => console.log(`listening on ${address}:${port}`))
 
-// ingest('./user_1002061_1675089365.zip')
+ingest('./user_1002061_1675089365.zip')
