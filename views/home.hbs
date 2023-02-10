@@ -1,6 +1,6 @@
 <section id="data-summary">
   <p><strong>total measurements</strong>: {{count}}</p>
-  <p><strong>temporal range</strong>: {{temporal.min}} – {{temporal.max}}</p>
+  <p><strong>temporal range</strong>: {{> time temporal.min}} – {{> time temporal.max}}</p>
   <p><strong>spatial range</strong>: ({{spatial.min.latitude}}, {{spatial.min.longitude}}) – ({{spatial.max.latitude}}, {{spatial.max.longitude}}); average: ({{spatial.avg.latitude}}, {{spatial.avg.longitude}})</p>
   <table>
     <thead>
@@ -14,4 +14,6 @@
       <tr><th>pm1</th><td>{{pm1.min}}</td><td>{{pm1.avg}}</td><td>{{pm1.max}}</td><td>µg/m³</td></tr>
     </tbody>
   </table>
+
+  <div id="map" data-token="{{map.token}}" data-latitude="{{spatial.avg.latitude}}" data-longitude="{{spatial.avg.longitude}}" data-zoom="{{map.zoom}}"></div>
 </section>

@@ -1,0 +1,35 @@
+#data-summary {
+  max-width: 960px;
+}
+
+#data-summary table th, #data-summary table td {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+#data-summary table thead th {
+  text-align: right;
+  padding-left: 2rem;
+}
+
+#data-summary table tbody th {
+  text-align: left;
+}
+
+#data-summary table tbody td {
+  text-align: right;
+  padding-left: 2rem;
+}
+
+#data-summary table tbody td:last-child {
+  text-align: left;
+  padding-left: 1rem;
+}
+
+#map {
+  aspect-ratio: 4 / 3;
+  width: 80%;
+  height: auto;
+  border: 0.5rem solid var(--lightgrey);
+  margin-top: 2rem;
+}
