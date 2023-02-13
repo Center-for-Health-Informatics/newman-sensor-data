@@ -21,7 +21,7 @@ Please remember that your Flow data may contain GPS information so be careful ab
 * measurements consisting of missing particulate matter values and zero NO₂ and VOC values are discarded
 * only a single set of measurements for a given time and place are stored
 * NO₂ and VOC measurements stored with units ppb (parts per billion)
-* pm10, pm2.5 & pm1 measurements stored with units µg/m³ (micrograms per cubic meter)
+* pm10, pm2.5 & pm1 measurements stored with units μg/m³ (micrograms per cubic meter)
 
 ## Dependencies
 

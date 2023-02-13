@@ -1,4 +1,10 @@
 <form enctype="application/x-www-form-urlencoded" action="{{action}}" method="get" id="export-form" autocomplete="off">
+<fieldset><legend>Format</legend>
+<ul>
+  <li><label><input type="radio" name="format" value="csv" checked> CSV</label></li>
+  <li><label><input type="radio" name="format" value="geojson"> GeoJSON</label></li>
+</ul>
+</fieldset>
 <div>
 <label for="first-date">First Date</label>
 <input type="date" id="first-date" name="first" min="{{first.min}}" max="{{first.max}}" value="{{first.value}}">
