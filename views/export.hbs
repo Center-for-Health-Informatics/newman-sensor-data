@@ -1,0 +1,15 @@
+<form enctype="application/x-www-form-urlencoded" action="{{action}}" method="get" id="export-form" autocomplete="off">
+<div>
+<label for="first-date">First Date</label>
+<input type="date" id="first-date" name="first" min="{{first.min}}" max="{{first.max}}" value="{{first.value}}">
+</div>
+
+<div>
+<label for="last-date">Last Date</label>
+<input type="date" id="last-date" name="last" min="{{last.min}}" max="{{last.max}}" value="{{last.value}}">
+</div>
+
+<div>
+  <input type="submit" value="export">
+</div>
+</form>
