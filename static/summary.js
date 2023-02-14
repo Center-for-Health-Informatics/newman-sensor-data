@@ -59,6 +59,26 @@ function updateMap (map) {
       source: {
         type: 'geojson',
         data: `/export?format=geojson&month=${month}`
+      },
+      paint: {
+        'circle-radius': {
+          base: 2,
+          stops: [
+            [12, 4],
+            [22, 180]
+          ]
+        },
+        'circle-color': [
+          'match',
+          ['get', 'class'],
+          'low',
+          '#00ff00',
+          'medium',
+          '#cc9900',
+          'high',
+          '#ff0000',
+          '#808080'
+        ]
       }
     })
     map.on('click', layerID, event => {
