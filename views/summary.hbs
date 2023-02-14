@@ -1,0 +1,18 @@
+<section id="data-summary">
+  <p><strong>total measurements</strong>: {{count}}</p>
+  <p><strong>temporal range</strong>: {{> time temporal.min}} – {{> time temporal.max}}</p>
+  <p><strong>spatial range</strong>: ({{spatial.min.latitude}}, {{spatial.min.longitude}}) – ({{spatial.max.latitude}}, {{spatial.max.longitude}})</p>
+  {{> measurementsummary measurement}}
+</section>
+
+<section id="visual-summary">
+  {{#with picker}}
+  <fieldset id="month-controls" data-min-year="{{min.year}}" data-min-month="{{min.month}}" data-max-year="{{max.year}}" data-max-month="{{max.month}}"><legend>Month</legend>
+  <div><button id="previous">←</button></div>
+  <div><select id="month">{{#each months}}<option value="{{value}}"{{#if selected}} selected{{/if}}>{{name}}</option>{{/each}}</select></div>
+  <div><input type="number" id="year" min="{{year.min}}" max="{{year.max}}" value="{{year.value}}"></div>
+  <div><button id="next">→</button></div>
+  </fieldset>
+  {{/with}}
+  <div id="map" data-token="{{token}}"></div>
+</section>

@@ -1,5 +1,5 @@
 #data-summary {
-  max-width: 960px;
+  max-width: 600px;
 }
 
 #data-summary table th, #data-summary table td {
@@ -26,10 +26,48 @@
   padding-left: 1rem;
 }
 
+#visual-summary {
+  margin-top: 2rem;
+  max-width: 600px;
+}
+
+#month-controls {
+  display: flex;
+  flex-direction: row;
+  column-gap: 0.5rem;
+}
+
 #map {
+  box-sizing: border-box;
   aspect-ratio: 4 / 3;
-  width: 80%;
+  width: 100%;
   height: auto;
   border: 0.5rem solid var(--lightgrey);
-  margin-top: 2rem;
 }
+
+.mapboxgl-popup-content table {
+  border-collapse: collapse;
+}
+
+.mapboxgl-popup-content table caption{
+  line-height: 1.2;
+  font-size: smaller;
+}
+
+.mapboxgl-popup-content table th {
+  font-weight: normal;
+  font-variant-caps: all-small-caps;
+  vertical-align: baseline;
+}
+
+.mapboxgl-popup-content table td {
+  text-align: right;
+  padding-left: 0.25em;
+  vertical-align: baseline;
+}
+
+.mapboxgl-popup-content table td:last-child {
+  text-align: left;
+  opacity: 0.5;
+}
+
