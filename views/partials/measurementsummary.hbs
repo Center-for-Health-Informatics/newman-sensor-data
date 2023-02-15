@@ -8,5 +8,6 @@
     {{#if pm10}}<tr><th>pm10</th><td>{{pm10.min}}</td><td>{{pm10.avg}}</td><td>{{pm10.max}}</td><td>μg/m³</td></tr>{{/if}}
     {{#if pm25}}<tr><th>pm2.5</th><td>{{pm25.min}}</td><td>{{pm25.avg}}</td><td>{{pm25.max}}</td><td>μg/m³</td></tr>{{/if}}
     {{#if pm1}}<tr><th>pm1</th><td>{{pm1.min}}</td><td>{{pm1.avg}}</td><td>{{pm1.max}}</td><td>μg/m³</td></tr>{{/if}}
+    {{#if aqi}}<tr><th title="Plume AQI">AQI</th><td>{{aqi.min}}</td><td>{{aqi.avg}}</td><td>{{aqi.max}}</td><td></td></tr>{{/if}}
   </tbody>
 </table>
