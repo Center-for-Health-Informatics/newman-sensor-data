@@ -70,13 +70,21 @@ function updateMap (map) {
         },
         'circle-color': [
           'match',
-          ['get', 'class'],
+          ['get', 'aqi'],
           'low',
-          '#00ff00',
-          'medium',
-          '#cc9900',
+          '#1dcfff',
+          'moderate',
+          '#8edb33',
           'high',
-          '#ff0000',
+          '#fd891a',
+          'very high',
+          '#fd891a',
+          'excessive',
+          '#a828d3',
+          'extreme',
+          '#8919e9',
+          'airpocalypse',
+          '#6a0bff',
           '#808080'
         ]
       }
