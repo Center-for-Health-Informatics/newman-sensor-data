@@ -71,19 +71,19 @@ function updateMap (map) {
         'circle-color': [
           'match',
           ['get', 'aqi'],
-          'low',
+          'Low',
           '#1dcfff',
-          'moderate',
+          'Moderate',
           '#8edb33',
-          'high',
+          'High',
           '#fd891a',
-          'very high',
-          '#fd891a',
-          'excessive',
+          'Very High',
+          '#e13366',
+          'Excessive',
           '#a828d3',
-          'extreme',
+          'Extreme',
           '#8919e9',
-          'airpocalypse',
+          'Airpocalypse',
           '#6a0bff',
           '#808080'
         ]
@@ -93,7 +93,7 @@ function updateMap (map) {
       const p = event.features[0].properties
       new mapboxgl.Popup()
         .setLngLat([event.lngLat.lng, event.lngLat.lat])
-        .setHTML(`<table><caption>${p.datetime}</caption><tbody><tr><th>NO₂</th><td>${p.no2}</td><td>ppb</td></tr><tr><th>VOC</th><td>${p.voc}</td><td>ppb</td></tr><tr><th>pm 10</th><td>${p.pm10}</td><td>µg/m³</td></tr><tr><th>pm 2.5</th><td>${p.pm25}</td><td>µg/m³</td></tr><tr><th>pm 1</th><td>${p.pm1}</td><td>µg/m³</td></tr></tbody></table>`)
+        .setHTML(`<table><caption>${p.datetime}</caption><tbody><tr><th>NO₂</th><td>${p.no2}</td><td>ppb</td></tr><tr><th>VOC</th><td>${p.voc}</td><td>ppb</td></tr><tr><th>pm 10</th><td>${p.pm10}</td><td>µg/m³</td></tr><tr><th>pm 2.5</th><td>${p.pm25}</td><td>µg/m³</td></tr><tr><th>pm 1</th><td>${p.pm1}</td><td>µg/m³</td></tr><tr><th>AQI</th><td colspan="2">${p.aqi}</td></tr></tbody></table>`)
         .addTo(map)
     })
     layerIDs.add(layerID)

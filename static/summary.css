@@ -71,3 +71,9 @@
   opacity: 0.5;
 }
 
+.mapboxgl-popup-content table td[colspan] {
+  text-align: right;
+  opacity: 0.62;
+  font-style: italic;
+}
+
