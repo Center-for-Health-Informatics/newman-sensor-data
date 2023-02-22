@@ -4,16 +4,19 @@
 }
 
 #file-drop.active {
-  background-color: var(--palered);
+  background-color: var(--highlight);
 }
 
 #file-drop.dropped {
-  background-color: var(--darkgrey);
+  background-color: var(--white);
+  border-color: var(--lightgrey);
+  color: var(--lightgrey);
 }
 
 form .input {
   padding: 0.5rem;
 }
+
 #ingest-progress {
   display: flex;
   flex-direction: column;
