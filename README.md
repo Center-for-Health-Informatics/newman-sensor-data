@@ -33,3 +33,7 @@ Please remember that your Flow data may contain GPS information so be careful ab
 * [express-handlebars](https://www.npmjs.com/package/express-handlebars)
 * [serve-favicon](https://www.npmjs.com/package/serve-favicon)
 * [uuid](https://www.npmjs.com/package/uuid)
+
+## Perspective
+
+![Coordinate Precision](https://imgs.xkcd.com/comics/coordinate_precision.png "Coordinate Precision")
