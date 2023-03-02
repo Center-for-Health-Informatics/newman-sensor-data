@@ -23,20 +23,15 @@ async function progress (url) {
   }
 }
 
-dropTarget.addEventListener('drop', async event => {
-  event.preventDefault()
-  event.target.classList.remove('active')
-  event.target.classList.add('dropped')
-  try {
-    const items = Array.from(event.dataTransfer.items).filter(i => i.kind === 'file' && i.type === 'application/zip')
-    if (items.length === 0) throw Error('no Flow data exports')
-    const input = document.getElementById('measurements')
-    const formData = new window.FormData()
-    for (const item of items) {
-      const file = item.getAsFile()
-      formData.append(`${input.name}_${file.name}`.replace(/\W/g, ''), file)
-    }
-    const response = await window.fetch(input.formAction, {
+async function postFileList (files) {
+  const formData = new window.FormData()
+  let id = 0
+  for (const file of files) {
+    if (file.type !== 'application/zip') continue
+    formData.append(`file${id++}_${file.name}`.replaceAll(/\W/g, ''), file)
+  }
+  if (id > 0) {
+    const response = await window.fetch(document.getElementById('flow-ingest').dataset.action, {
       method: 'POST',
       mode: 'same-origin',
       cache: 'no-cache',
@@ -50,6 +45,15 @@ dropTarget.addEventListener('drop', async event => {
     } else {
       throw Error(`${response.status} ${response.statusText}`)
     }
+  }
+}
+
+dropTarget.addEventListener('drop', async event => {
+  event.preventDefault()
+  event.target.classList.remove('active')
+  event.target.classList.add('dropped')
+  try {
+    await postFileList(event.dataTransfer.files)
   } catch (err) {
     window.alert(err.message)
   }
@@ -66,4 +70,13 @@ dropTarget.addEventListener('dragenter', event => {
 
 dropTarget.addEventListener('dragleave', event => {
   event.target.classList.remove('active')
+}, { passive: true })
+
+document.getElementById('flow-files').addEventListener('change', async event => {
+  try {
+    await postFileList(event.target.files)
+    event.target.value = '' // reset the file input
+  } catch (err) {
+    window.alert(err.message)
+  }
 }, { passive: true })
