@@ -1,10 +1,12 @@
 <form enctype="application/x-www-form-urlencoded" action="{{action}}" method="get" id="export-form" autocomplete="off">
-<fieldset><legend>Format</legend>
+<fieldset id="format-options"><legend>Format</legend>
 <ul>
   <li><label><input type="radio" name="format" value="csv" checked> CSV</label></li>
   <li><label><input type="radio" name="format" value="geojson"> GeoJSON</label></li>
 </ul>
 </fieldset>
+
+<fieldset id="date-range"><legend>Date Range</legend>
 <div>
 <label for="first-date">First Date</label>
 <input type="date" id="first-date" name="first" min="{{first.min}}" max="{{first.max}}" value="{{first.value}}">
@@ -14,6 +16,17 @@
 <label for="last-date">Last Date</label>
 <input type="date" id="last-date" name="last" min="{{last.min}}" max="{{last.max}}" value="{{last.value}}">
 </div>
+</fieldset>
+
+<fieldset id="project-tags"><legend>Projects</legend>
+<ul>
+  <li><input type="checkbox"> <label>Pilot-2021</label></li>
+  <li><input type="checkbox" checked> <label>Initial Evaluation</label></li>
+  <li><input type="checkbox"> <label>Public Library Collaboration</label></li>
+  <li><input type="checkbox"> <label>Taste of Cincinnati 2022</label></li>
+</ul>
+<div><input type="button" value="include all"></div>
+</fieldset>
 
 <div>
   <input type="submit" value="export">
