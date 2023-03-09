@@ -13,20 +13,20 @@
   color: var(--lightgrey);
 }
 
-#flow-ingest .field {
+#data-ingest .field {
   display: flex;
   flex-direction: row;
   column-gap: 1rem;
   padding: 0.5rem 0.25rem 0.5rem 1rem;
 }
 
-#flow-ingest .field label {
+#data-ingest .field label {
   flex-basis: content;
   flex-grow: 0;
   flex-shrink: 0;
 }
 
-#flow-ingest .field input {
+#data-ingest .field input {
   flex-basis: auto;
   flex-grow: 1;
   flex-shrink: 0;

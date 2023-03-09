@@ -27,11 +27,10 @@ async function postFileList (files) {
   const formData = new window.FormData()
   let id = 0
   for (const file of files) {
-    if (file.type !== 'application/zip') continue
-    formData.append(`file${id++}_${file.name}`.replaceAll(/\W/g, ''), file)
+    if (['application/zip', 'text/csv'].includes(file.type)) formData.append(`file${id++}_${file.name}`.replaceAll(/\W/g, ''), file)
   }
   if (id > 0) {
-    const response = await window.fetch(document.getElementById('flow-ingest').dataset.action, {
+    const response = await window.fetch(document.getElementById('data-ingest').dataset.action, {
       method: 'POST',
       mode: 'same-origin',
       cache: 'no-cache',
@@ -72,7 +71,7 @@ dropTarget.addEventListener('dragleave', event => {
   event.target.classList.remove('active')
 }, { passive: true })
 
-document.getElementById('flow-files').addEventListener('change', async event => {
+document.getElementById('data-files').addEventListener('change', async event => {
   try {
     await postFileList(event.target.files)
     event.target.value = '' // reset the file input
