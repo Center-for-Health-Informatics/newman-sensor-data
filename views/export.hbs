@@ -6,6 +6,18 @@
 </ul>
 </fieldset>
 
+{{#if showSourcePicker}}
+<fieldset id="data-source"><legend>Data Source</legend>
+<ul>
+  {{#each source}}
+  <li><label><input type="radio" name="source" value="{{value}}"{{#if checked}} checked{{/if}}> {{label}}</label></li>
+  {{/each}}
+</ul>
+</fieldset>
+{{else}}
+<input type="hidden" name="source" value="{{source}}">
+{{/if}}
+
 <fieldset id="date-range"><legend>Date Range</legend>
 <div>
 <label for="first-date">First Date</label>
@@ -18,7 +30,7 @@
 </div>
 </fieldset>
 
-<fieldset id="project-tags"><legend>Projects</legend>
+{{!-- <fieldset id="project-tags"><legend>Projects</legend>
 <ul>
   <li><input type="checkbox"> <label>Pilot-2021</label></li>
   <li><input type="checkbox" checked> <label>Initial Evaluation</label></li>
@@ -26,7 +38,7 @@
   <li><input type="checkbox"> <label>Taste of Cincinnati 2022</label></li>
 </ul>
 <div><input type="button" value="include all"></div>
-</fieldset>
+</fieldset> --}}
 
 <div>
   <input type="submit" value="export">
