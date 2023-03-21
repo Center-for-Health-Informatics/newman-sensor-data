@@ -50,6 +50,8 @@ Please remember that your Flow data may contain GPS information so be careful ab
 
 ## [HabitatMap · Airbeam](https://www.habitatmap.org/airbeam)
 
+* **Important** data files swap latitude and longitude values!
+
 ## unspecified X-ray fluorescent (XRF) soil analyzer
 
 * measurements are stored per element, except `LE` which is the total of all *light elements*

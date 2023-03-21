@@ -41,7 +41,7 @@ function createMap (id) {
     accessToken: container.dataset.token,
     container: id, // container ID
     style: 'mapbox://styles/mapbox/streets-v12', // style URL
-    center: [-84.5036, 39.1396], // starting position [lng, lat]
+    center: [-84.5, 39.14], // starting position [lng, lat]
     zoom: 11 // starting zoom
   })
 }
@@ -54,6 +54,7 @@ function updateMap (map) {
     layerIDs.forEach(id => map.setLayoutProperty(id, 'visibility', id === layerID ? 'visible' : 'none'))
   } else {
     layerIDs.forEach(id => map.setLayoutProperty(id, 'visibility', 'none'))
+    console.log(`${document.getElementById(mapID).dataset.source}?format=geojson&month=${month}`)
     map.addLayer({
       id: `measurements-${month}`,
       type: 'circle',
@@ -92,9 +93,21 @@ function updateMap (map) {
     })
     map.on('click', layerID, event => {
       const p = event.features[0].properties
+      const t = [`<table><caption style="white-space: nowrap">${p.datetime}</caption><tbody>`]
+      if ('no2' in p) t.push(`<tr><th>NO₂</th><td>${p.no2}</td><td>ppb</td></tr>`)
+      if ('voc' in p) t.push(`<tr><th>VOC</th><td>${p.voc}</td><td>ppb</td></tr>`)
+      if ('pm10' in p) t.push(`<tr><th>pm 10</th><td>${p.pm10}</td><td>µg/m³</td></tr>`)
+      if ('pm25' in p) t.push(`<tr><th>pm 2.5</th><td>${p.pm25}</td><td>µg/m³</td></tr>`)
+      if ('pm1' in p) t.push(`<tr><th>pm 1</th><td>${p.pm1}</td><td>µg/m³</td></tr>`)
+      if ('aqi' in p) t.push(`<tr><th>AQI</th><td colspan="2">${p.aqi}</td></tr>`)
+      if ('pm' in p) t.push(`<tr><th>PM</th><td>${p.pm}</td><td>µg/m³</td></tr>`)
+      if ('temperature' in p) t.push(`<tr><th>Temp</th><td>${p.temperature}</td><td>°F</td></tr>`)
+      if ('soundlevel' in p) t.push(`<tr><th>SL</th><td>${p.soundlevel}</td><td>db</td></tr>`)
+      if ('humidity' in p) t.push(`<tr><th>RH</th><td>${p.humidity}</td><td>%</td></tr>`)
+      t.push('</tbody></table>')
       new mapboxgl.Popup()
         .setLngLat([event.lngLat.lng, event.lngLat.lat])
-        .setHTML(`<table><caption>${p.datetime}</caption><tbody><tr><th>NO₂</th><td>${p.no2}</td><td>ppb</td></tr><tr><th>VOC</th><td>${p.voc}</td><td>ppb</td></tr><tr><th>pm 10</th><td>${p.pm10}</td><td>µg/m³</td></tr><tr><th>pm 2.5</th><td>${p.pm25}</td><td>µg/m³</td></tr><tr><th>pm 1</th><td>${p.pm1}</td><td>µg/m³</td></tr><tr><th>AQI</th><td colspan="2">${p.aqi}</td></tr></tbody></table>`)
+        .setHTML(t.join(''))
         .addTo(map)
     })
     layerIDs.add(layerID)
