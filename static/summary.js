@@ -1,8 +1,9 @@
 /* global mapboxgl */
 const layerIDs = new Set()
+const mapID = 'map'
 
 window.addEventListener('DOMContentLoaded', () => {
-  const map = createMap('map')
+  const map = createMap(mapID)
 
   map.on('load', () => {
     updateMap(map)
@@ -58,7 +59,7 @@ function updateMap (map) {
       type: 'circle',
       source: {
         type: 'geojson',
-        data: `/export?format=geojson&month=${month}`
+        data: `${document.getElementById(mapID).dataset.source}?format=geojson&month=${month}`
       },
       paint: {
         'circle-radius': {
