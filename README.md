@@ -4,7 +4,7 @@
 ## instalation and use
 
 * clone from github
-* install dependencies with `npm ci`
+* install dependencies with `npm ci --omit=dev`
 * assign the value of your [Mapbox access token](https://docs.mapbox.com/help/getting-started/access-tokens/) to the `MAPBOX_TOKEN` environment variable
 * start the server with `npm start`
 * navigate a web browser to the url displayed at startup
