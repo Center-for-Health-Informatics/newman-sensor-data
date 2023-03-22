@@ -54,7 +54,6 @@ function updateMap (map) {
     layerIDs.forEach(id => map.setLayoutProperty(id, 'visibility', id === layerID ? 'visible' : 'none'))
   } else {
     layerIDs.forEach(id => map.setLayoutProperty(id, 'visibility', 'none'))
-    console.log(`${document.getElementById(mapID).dataset.source}?format=geojson&month=${month}`)
     map.addLayer({
       id: `measurements-${month}`,
       type: 'circle',

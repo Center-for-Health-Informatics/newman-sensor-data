@@ -79,6 +79,7 @@
 #export {
   margin-top: 5rem;
   max-width: 600px;
+  margin-bottom: 5rem;
 }
 
 #export fieldset {
