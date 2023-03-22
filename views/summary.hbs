@@ -1,3 +1,6 @@
+<section id="summary">
+<header><h2>Summary</h2></header>
+
 <section id="data-summary">
   <p><strong>total measurements</strong>: {{count}}</p>
   <p><strong>temporal range</strong>: {{> time temporal.min}} – {{> time temporal.max}}</p>
@@ -16,7 +19,9 @@
   {{/with}}
   <div id="map" data-token="{{token}}" data-source="{{source}}"></div>
 </section>
+</section>
 
 <section id="export">
+<header><h2>Export</h2></header>
 {{> export .}}
 </section>

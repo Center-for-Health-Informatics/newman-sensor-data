@@ -10,6 +10,13 @@
 * navigate a web browser to the url displayed at startup
 * drag or pick data files to import
 
+## Environment
+variable | description | default
+--- | --- | ---
+MAPBOX_TOKEN | [Mapbox access token](https://docs.mapbox.com/help/getting-started/access-tokens/) | *none*
+HTTP_HOST | network interface to bind to | `localhost`
+HTTP_PORT | TCP port to listen on | 0 (*auto*)
+
 ## Package Dependencies
 
 * [@robireton/chrono](https://www.npmjs.com/package/@robireton/chrono)
@@ -50,7 +57,8 @@ Please remember that your Flow data may contain GPS information so be careful ab
 
 ## [HabitatMap · Airbeam](https://www.habitatmap.org/airbeam)
 
-* **Important** data files swap latitude and longitude values!
+* **Important** data files swap latitude and longitude values! We correct on import.
+* data for different sensors are concatenated vertically in one CSV file
 
 ## unspecified X-ray fluorescent (XRF) soil analyzer
 

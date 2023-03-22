@@ -1,7 +1,7 @@
 {
-  "name": "newman-flow-data",
+  "name": "newman-sensor-data",
   "version": "1.0.0",
-  "description": "data wrangling for Flow sensor data",
+  "description": "data wrangling for various environmental sensors",
   "type": "module",
   "main": "index.js",
   "scripts": {
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Center-for-Health-Informatics/newman-flow-data.git"
+    "url": "git+https://github.com/Center-for-Health-Informatics/newman-sensor-data.git"
   },
   "author": "Rob Ireton <iretonrt@ucmail.uc.edu>",
   "license": "UNLICENSED",
   "bugs": {
-    "url": "https://github.com/Center-for-Health-Informatics/newman-flow-data/issues"
+    "url": "https://github.com/Center-for-Health-Informatics/newman-sensor-data/issues"
   },
-  "homepage": "https://github.com/Center-for-Health-Informatics/newman-flow-data#readme",
+  "homepage": "https://github.com/Center-for-Health-Informatics/newman-sensor-data#readme",
   "dependencies": {
     "@robireton/chrono": "^2.2.0",
     "adm-zip": "^0.5.10",
