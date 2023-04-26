@@ -1,0 +1,13 @@
+.dockerignore
+.git
+.gitignore
+.vscode
+etc
+info
+node_modules
+test
+**/.DS_Store
+**/*.db
+**/*.env
+**/*.sh
+**/*.tgz
