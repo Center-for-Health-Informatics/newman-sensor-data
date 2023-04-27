@@ -16,6 +16,7 @@ variable | description | default
 MAPBOX_TOKEN | [Mapbox access token](https://docs.mapbox.com/help/getting-started/access-tokens/) | *none*
 HTTP_HOST | network interface to bind to | `localhost`
 HTTP_PORT | TCP port to listen on | 0 (*auto*)
+DB_PATH | location for SQLite database file | `./measurements.db`
 
 ## Package Dependencies
 
@@ -33,6 +34,7 @@ HTTP_PORT | TCP port to listen on | 0 (*auto*)
 * coordinates for measurements are interpolated (linear) from position data
 * coordinates values are retained with enough precision to locate measurement within a few meters
 * measurements are rounded to the nearest integer
+* *might* work on Windows, but hasn’t been tested
 
 ## [Plume Labs · Flow](https://plumelabs.com/en/flow/)
 
