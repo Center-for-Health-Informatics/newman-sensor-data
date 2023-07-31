@@ -1,6 +1,6 @@
 {
   "name": "newman-sensor-data",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "data wrangling for various environmental sensors",
   "type": "module",
   "main": "index.js",
@@ -30,7 +30,6 @@
     "uuid": "^9.0.0"
   },
   "devDependencies": {
-    "dotenv": "latest",
-    "nodemon": "latest"
+    "dotenv": "latest"
   }
 }
