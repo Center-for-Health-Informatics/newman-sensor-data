@@ -1,6 +1,6 @@
 {
   "name": "newman-sensor-data",
-  "version": "1.0.6",
+  "version": "1.1.0",
   "description": "data wrangling for various environmental sensors",
   "type": "module",
   "main": "index.js",
@@ -22,7 +22,7 @@
   "dependencies": {
     "@robireton/chrono": "^2.2.0",
     "adm-zip": "^0.5.10",
-    "better-sqlite3": "^8.0.1",
+    "better-sqlite3": "^9.0.0",
     "express": "^4.18.2",
     "express-fileupload": "^1.4.0",
     "express-handlebars": "^7.0.1",
