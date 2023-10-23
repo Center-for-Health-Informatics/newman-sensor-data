@@ -1,6 +1,6 @@
 {
   "name": "newman-sensor-data",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "data wrangling for various environmental sensors",
   "type": "module",
   "main": "index.js",
@@ -19,17 +19,17 @@
     "url": "https://github.com/Center-for-Health-Informatics/newman-sensor-data/issues"
   },
   "homepage": "https://github.com/Center-for-Health-Informatics/newman-sensor-data#readme",
+  "devDependencies": {
+    "dotenv": "latest"
+  },
   "dependencies": {
-    "@robireton/chrono": "^2.2.0",
+    "@robireton/chrono": "^2.3.0",
     "adm-zip": "^0.5.10",
     "better-sqlite3": "^9.0.0",
     "express": "^4.18.2",
-    "express-fileupload": "^1.4.0",
-    "express-handlebars": "^7.0.1",
+    "express-fileupload": "^1.4.1",
+    "express-handlebars": "^7.1.2",
     "serve-favicon": "^2.5.0",
-    "uuid": "^9.0.0"
-  },
-  "devDependencies": {
-    "dotenv": "latest"
+    "uuid": "^9.0.1"
   }
 }
