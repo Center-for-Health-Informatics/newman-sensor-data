@@ -1,10 +1,10 @@
 name: "newman"
 services:
   server:
-    image: "newman-sensor-data"
+    image: "newman-sensor-data:latest"
     env_file: "./newman.env"
     volumes:
       - "./run:/home/node/app/run"
     ports:
-      - "3569:8080"
+      - "3569:80"
     restart: unless-stopped
