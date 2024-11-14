@@ -1,4 +1,4 @@
-FROM node:20
+FROM node:lts-slim
 USER node
 RUN mkdir /home/node/app
 WORKDIR /home/node/app

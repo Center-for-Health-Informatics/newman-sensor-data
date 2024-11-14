@@ -1,6 +1,6 @@
 {
   "name": "newman-sensor-data",
-  "version": "1.2.9",
+  "version": "1.2.10",
   "description": "data wrangling for various environmental sensors",
   "type": "module",
   "main": "index.js",
@@ -30,6 +30,6 @@
     "express-fileupload": "^1.4.1",
     "express-handlebars": "^8.0.1",
     "serve-favicon": "^2.5.0",
-    "uuid": "^10.0.0"
+    "uuid": "^11.0.0"
   }
 }
